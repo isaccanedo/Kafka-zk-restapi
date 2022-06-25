@@ -1,0 +1,10 @@
+language: java
+jdk: openjdk8
+dist: trusty
+install:
+- mvn -N io.takari:maven:wrapper
+- ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+script:
+- echo "skipping tests"
+before_install:
+- chmod +x mvnw

@@ -1,0 +1,165 @@
+= Kafka REST API
+
+image:https://travis-ci.org/isaccanedo/Kafka-zk-restapi.svg?branch=master["Build Status", link="https://travis-ci.org/isaccanedo/Kafka-zk-restapi"]
+
+[[_overview]]
+== Overview
+Kafka/ZK REST API is to provide the production-ready endpoints to perform some administration/metric task for Kafka and Zookeeper.
+
+// tag::base-t[]
+.Following features are provided:
+* cluster/nodes/controller info describe
+* Broker List
+* Broker config get/update, dynamic config get/update/delete
+* Log dirs describe, filtered by brokers/topic/partition/logdirs
+* Topic create/delete/describe/list
+* Topic config create/update/list
+* Topic partition add and reassign, replicas movement between log directories is supported
+* Topic Partition leadership transfer back to preferred replica
+* Consumer group list/describe/delete
+* Consumer Group Lag check
+* Offset reset by earliest/latest/timestamp
+* Contents view of message by different decoder, avro is also supported
+* Schema management on Schema Registry is supported
+* Collect JMX metrics from brokers that expose JMX metrics +
+  More details refer to https://github.com/isaccanedo/Kafka-zk-restapi/blob/master/docs/JMXCollector.adoc[JMXCollector API Specification]
+* Secure the REST API with Spring Security
+// end::base-t[]
+
+image::https://raw.githubusercontent.com/isaccanedo/Kafka-zk-restapi/master/pics/ShowApi.png[API]
+
+
+We have also opensourced a simple but useful UI for these APIs. Please check https://github.com/isaccanedo/Kafka-zk-restapi-UI for more details.
+
+=== Installation and run
+First of all, Java 8 jre/jdk needed.
+
+You can download the release package at
+https://github.com/isaccanedo/Kafka-zk-restapi/releases
+
+You can get it running by unzip/untaring the distribution package, perform some configurations needed and run bin/start.sh
+
+=== How to build 
+
+You can build this restapi server using maven.
+
+. `$ git clone \https://github.com/isaccanedo/Kafka-zk-restapi.git`
+. `$ cd Kafka-zk-restapi/`
+. `$ mvn clean package -Dmaven.test.skip=true`
+
+After maven building, you will find zip/tar under directory: Kafka-zk-restapi/target.
+
+**New**:
+Now we support build docker image using spotify docker-maven-plugin.
+A docker image named kafka-rest-springboot:latest is created after building. If you want
+to build your own image, modify application property files in src/main/resources first.
+Details refer to <<_How to config,'How to config'>>
+
+=== How to config
+You can get it running by unzip/untaring the distribution package and change the corresponding configuration in config directory:
+
+Change the following settings of application-ACTIVEENV.yml:
+
+* kafka.brokers: kafka broker addresses.
+* kafka.schemaregistry: Schema Registry address. If not exist, just provide a random URL.
+* kafka.healthcheck.topic: Topic name for health check.
+* kafka.sasl.enable/kafka.sasl.protocol/kafka.sasl.mechanism: Set kafka.sasl.enable to true if connect to a kafka cluster that adds SASL authentication.
+Remember to assign JAAS config file location to JVM property java.security.auth.login.config before starting this application.
+* zookeeper.uris: zookeeper addresses.
+* jmx.kafka.jmxurl/jmx.zookeeper.jmxurl: kafka/zookeeper jmx urls. If you want to use JMX Query Filter function, you can add your own custom filter files to JMXFilterTemplate directory in project root folder.
+More details refer to https://github.com/isaccanedo/Kafka-zk-restapi/blob/master/docs/JMXCollector.adoc[JMXCollector API Specification]
+* server.security.check/server.security.checkInitDelay/server.security.checkSecurityInterval: Security related parameters.
+See below: <<_security,'How to config security'>>
+
+=== How to run
+==== A. Pulling from Docker hub
+Step 1 : Prepare a directory that contains spring application property files as a volume to mount into the container.
+Custom your own parameters such as Kafka/zk addresses, schema registry url, security params, etc.
+
+Step 2 : Run the image. /XX/XX/config is the directory that noticed in Step 1.
+
+`$ docker run -p 8121:8121 -v /XX/XX/config:/app/config --env JAVA_OPTS='-Xms1g -Xmx1g' tinawenqiao/kafka-rest-springboot`
+
+Details refer to https://hub.docker.com/r/tinawenqiao/kafka-rest-springboot
+
+Note: Make sure advertised.listeners(kafka server property) is set correctly if you access kafka from docker image.
+
+==== B. Run your own docker image
+
+`$ docker run -p 8121:8121 --env JAVA_OPTS='-Xms1g -Xmx1g' tinawenqiao/kafka-rest-springboot:latest`
+
+Note: Make sure advertised.listeners(kafka server property) is set correctly if you access kafka from docker image.
+
+See <<_How to build,'How to build'>>
+
+==== C. Use the built tar/zip package
+. `$ tar -xvf kafka-zk-api-1.1.x-release-dist.tar`
+  or
+  `$ unzip kafka-zk-api-1.1.x-release-dist.zip`
+. `$ cd kafka-zk-api-1.1.x-release-dist`
+. `$ bin/start.sh`
+
+ Note: If connect to a kafka cluster that adds SASL authentication, add -Djava.security.auth.login.config=jaas.conf to JVM property.
+
+[[_security]]
+=== Security
+Public REST services without access control make the sensitive data under risk.Then we provide a simple authentication mechanism using Spring Security.
+In order to make the project lighter, we use yml file to store user information, not using database.
+
+Follow the steps to enable security feature：
+
+Step 1：Modify the application config file and set server.security.check to true. +
+
+* server.security.check:
+  ** True: Add security for the API. Clients can access the API with valid username and password stored in security.yml, or the Swagger UI(http://127.0.0.1:8121/api) is only
+                        allowed to access.
+  ** False: All the endpoints can be accessed without authentication.
+* server.security.checkInitDelay: The number of seconds of init delay for the timing thread to check the security file.
+* server.security.checkSecurityInterval: The number of seconds of check interval for the timing thread to check the security file.
+
+Step 2: Make sure security/security.yml exist in application root folder.
+
+Step 3: Use user controller API to add user to security file security/security.yml. +
+**Notice**:
+
+* The first user should be added manually. Password need to be encoded using bcrypt before saving to the yml file.For convenience, we provide CommonUtils to encode the password.
+* No need to restart server after adding new user or update user info. Timing thread introduced in Step 1 will refresh the user list according to your settings.
+
+=== Support Kafka Version Information
+Currently, this rest api (master branch) supports Kafka 1.1.1 brokers. The master branch is the most active branch.
+
+*For other version of kafka rather than 1.1.1, please checkout the coresponding branch by calling the command:*
+
+git clone -b BRANCHNAME https://github.com/isaccanedo/Kafka-zk-restapi.git
+
+=== URI scheme
+[%hardbreaks]
+__Host__ : localhost:8121
+__BasePath__ : /
+
+You can access Swagger-UI by accessing http://127.0.0.1:8121/api
+
+
+=== https://github.com/isaccanedo/Kafka-zk-restapi/blob/master/docs/paths.adoc[API LIST for 1.1.1]
+
+
+* kafka-controller : Kafka Api
+* zookeeper-controller : Zookeeper Api
+* collector-controller : JMX Metric Collector Api
+* user-controller : User management Api
+
+
+=== https://github.com/isaccanedo/Kafka-zk-restapi/blob/master/docs/definitions.adoc[Data Model Definitions for 1.1.1]
+
+
+=== Version information
+[%hardbreaks]
+__Version__ : 1.1.1
+
+
+=== Contact information
+[%hardbreaks]
+__Contact__ : isaccanedo
+__Github__ : https://github.com/isaccanedo
+
+

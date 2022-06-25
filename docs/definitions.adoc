@@ -1,0 +1,691 @@
+
+[[_definitions]]
+== Definitions
+
+[[_addpartition]]
+=== AddPartition
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**numPartitionsAdded** +
+__optional__|integer(int32)
+|**replicaAssignment** +
+__optional__|< < integer(int32) > array > array
+|**topic** +
+__optional__|string
+|===
+
+
+[[_brokerinfo]]
+=== BrokerInfo
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**endpoints** +
+__optional__|< string > array
+|**host** +
+__optional__|string
+|**id** +
+__optional__|integer(int32)
+|**jmxPort** +
+__optional__|integer(int32)
+|**port** +
+__optional__|integer(int32)
+|**rack** +
+__optional__|string
+|**securityProtocol** +
+__optional__|object
+|**startTime** +
+__optional__|string(date-time)
+|**version** +
+__optional__|integer(int32)
+|===
+
+
+[[_clusterinfo]]
+=== ClusterInfo
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**clusterId** +
+__optional__|string
+|**controller** +
+__optional__|<<_node,Node>>
+|**nodes** +
+__optional__|< <<_node,Node>> > array
+|===
+
+
+[[_consumergroupdesc]]
+=== ConsumerGroupDesc
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**assignmentStrategy** +
+__optional__|string
+|**clientId** +
+__optional__|string
+|**consumerId** +
+__optional__|string
+|**coordinator** +
+__optional__|<<_node,Node>>
+|**currentOffset** +
+__optional__|integer(int64)
+|**groupName** +
+__optional__|string
+|**host** +
+__optional__|string
+|**lag** +
+__optional__|integer(int64)
+|**logEndOffset** +
+__optional__|integer(int64)
+|**partitionId** +
+__optional__|integer(int32)
+|**state** +
+__optional__|enum (Unknown, PreparingRebalance, CompletingRebalance, Stable, Dead, Empty)
+|**topic** +
+__optional__|string
+|**type** +
+__optional__|enum (NEW, OLD)
+|===
+
+
+[[_consumergroupmeta]]
+=== ConsumerGroupMeta
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**assignmentStrategy** +
+__optional__|string
+|**coordinator** +
+__optional__|<<_node,Node>>
+|**groupId** +
+__optional__|string
+|**members** +
+__optional__|< <<_memberdescription,MemberDescription>> > array
+|**state** +
+__optional__|enum (Unknown, PreparingRebalance, CompletingRebalance, Stable, Dead, Empty)
+|===
+
+
+[[_customconfigentry]]
+=== CustomConfigEntry
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**isReadOnly** +
+__optional__|boolean
+|**isSensitive** +
+__optional__|boolean
+|**name** +
+__optional__|string
+|**readOnly** +
+__optional__|boolean
+|**sensitive** +
+__optional__|boolean
+|**source** +
+__optional__|enum (DYNAMIC_TOPIC_CONFIG, DYNAMIC_BROKER_CONFIG, DYNAMIC_DEFAULT_BROKER_CONFIG, STATIC_BROKER_CONFIG, DEFAULT_CONFIG, UNKNOWN)
+|**value** +
+__optional__|string
+|===
+
+
+[[_customtopicpartitioninfo]]
+=== CustomTopicPartitionInfo
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**endOffset** +
+__optional__|integer(int64)
+|**in_sync** +
+__optional__|boolean
+|**messageAvailable** +
+__optional__|integer(int64)
+|**startOffset** +
+__optional__|integer(int64)
+|**topicPartitionInfo** +
+__optional__|<<_topicpartitioninfo,TopicPartitionInfo>>
+|===
+
+
+[[_generalresponse]]
+=== GeneralResponse
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**data** +
+__optional__|object
+|**msg** +
+__optional__|string
+|**state** +
+__optional__|enum (success, failure)
+|===
+
+
+[[_25ace99c7bfccf8d17a8f035a9b4bd2f]]
+=== HashMap«string,object»
+__Type__ : < string, object > map
+
+
+[[_healthcheckresult]]
+=== HealthCheckResult
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**msg** +
+__optional__||string
+|**status** +
+__optional__||string
+|**timestamp** +
+__optional__|**Example** : `"yyyy-MM-dd HH:mm:ss"`|string
+|===
+
+
+[[_hostandport]]
+=== HostAndPort
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**hasBracketlessColons** +
+__optional__|boolean
+|**host** +
+__optional__|string
+|**hostText** +
+__optional__|string
+|**port** +
+__optional__|integer(int32)
+|===
+
+
+[[_jmxconfiguration]]
+=== JMXConfiguration
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**exclude** +
+__optional__|<<_jmxfilter,JMXFilter>>
+|**include** +
+__optional__|<<_jmxfilter,JMXFilter>>
+|===
+
+
+[[_jmxfilter]]
+=== JMXFilter
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**attribute** +
+__optional__|object
+|**beanNames** +
+__optional__|< string > array
+|**beanRegexes** +
+__optional__|< <<_pattern,Pattern>> > array
+|**domain** +
+__optional__|string
+|**domainRegex** +
+__optional__|<<_pattern,Pattern>>
+|**emptyBeanName** +
+__optional__|boolean
+|**filter** +
+__optional__|< string, object > map
+|===
+
+
+[[_jmxmetricdata]]
+=== JMXMetricData
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**collected** +
+__optional__||boolean
+|**host** +
+__optional__||string
+|**metrics** +
+__optional__||< <<_25ace99c7bfccf8d17a8f035a9b4bd2f,HashMap«string,object»>> > array
+|**msg** +
+__optional__||string
+|**timestamp** +
+__optional__|**Example** : `"yyyy-MM-dd HH:mm:ss"`|string
+|===
+
+
+[[_jmxmetricdatav1]]
+=== JMXMetricDataV1
+
+[options="header", cols=".^3,.^11,.^4"]
+|===
+|Name|Description|Schema
+|**collected** +
+__optional__||boolean
+|**host** +
+__optional__||string
+|**mbeanInfo** +
+__optional__||object
+|**msg** +
+__optional__||string
+|**timestamp** +
+__optional__|**Example** : `"yyyy-MM-dd HH:mm:ss"`|string
+|===
+
+
+[[_jmxquery]]
+=== JMXQuery
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**filters** +
+__optional__|< <<_jmxconfiguration,JMXConfiguration>> > array
+|===
+
+
+[[_logdirinfo]]
+=== LogDirInfo
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**error** +
+__optional__|enum (UNKNOWN_SERVER_ERROR, NONE, OFFSET_OUT_OF_RANGE, CORRUPT_MESSAGE, UNKNOWN_TOPIC_OR_PARTITION, INVALID_FETCH_SIZE, LEADER_NOT_AVAILABLE, NOT_LEADER_FOR_PARTITION, REQUEST_TIMED_OUT, BROKER_NOT_AVAILABLE, REPLICA_NOT_AVAILABLE, MESSAGE_TOO_LARGE, STALE_CONTROLLER_EPOCH, OFFSET_METADATA_TOO_LARGE, NETWORK_EXCEPTION, COORDINATOR_LOAD_IN_PROGRESS, COORDINATOR_NOT_AVAILABLE, NOT_COORDINATOR, INVALID_TOPIC_EXCEPTION, RECORD_LIST_TOO_LARGE, NOT_ENOUGH_REPLICAS, NOT_ENOUGH_REPLICAS_AFTER_APPEND, INVALID_REQUIRED_ACKS, ILLEGAL_GENERATION, INCONSISTENT_GROUP_PROTOCOL, INVALID_GROUP_ID, UNKNOWN_MEMBER_ID, INVALID_SESSION_TIMEOUT, REBALANCE_IN_PROGRESS, INVALID_COMMIT_OFFSET_SIZE, TOPIC_AUTHORIZATION_FAILED, GROUP_AUTHORIZATION_FAILED, CLUSTER_AUTHORIZATION_FAILED, INVALID_TIMESTAMP, UNSUPPORTED_SASL_MECHANISM, ILLEGAL_SASL_STATE, UNSUPPORTED_VERSION, TOPIC_ALREADY_EXISTS, INVALID_PARTITIONS, INVALID_REPLICATION_FACTOR, INVALID_REPLICA_ASSIGNMENT, INVALID_CONFIG, NOT_CONTROLLER, INVALID_REQUEST, UNSUPPORTED_FOR_MESSAGE_FORMAT, POLICY_VIOLATION, OUT_OF_ORDER_SEQUENCE_NUMBER, DUPLICATE_SEQUENCE_NUMBER, INVALID_PRODUCER_EPOCH, INVALID_TXN_STATE, INVALID_PRODUCER_ID_MAPPING, INVALID_TRANSACTION_TIMEOUT, CONCURRENT_TRANSACTIONS, TRANSACTION_COORDINATOR_FENCED, TRANSACTIONAL_ID_AUTHORIZATION_FAILED, SECURITY_DISABLED, OPERATION_NOT_ATTEMPTED, KAFKA_STORAGE_ERROR, LOG_DIR_NOT_FOUND, SASL_AUTHENTICATION_FAILED, UNKNOWN_PRODUCER_ID, REASSIGNMENT_IN_PROGRESS, DELEGATION_TOKEN_AUTH_DISABLED, DELEGATION_TOKEN_NOT_FOUND, DELEGATION_TOKEN_OWNER_MISMATCH, DELEGATION_TOKEN_REQUEST_NOT_ALLOWED, DELEGATION_TOKEN_AUTHORIZATION_FAILED, DELEGATION_TOKEN_EXPIRED, INVALID_PRINCIPAL_TYPE, NON_EMPTY_GROUP, GROUP_ID_NOT_FOUND, FETCH_SESSION_ID_NOT_FOUND, INVALID_FETCH_SESSION_EPOCH)
+|**replicaInfos** +
+__optional__|< string, <<_replicainfo,ReplicaInfo>> > map
+|===
+
+
+[[_bbed2f02db402d6ae09a0dcf86682c45]]
+=== Map«int,long»
+__Type__ : < string, integer(int64) > map
+
+
+[[_95991ed347668e76e825df5c80149c08]]
+=== Map«string,LogDirInfo»
+__Type__ : < string, <<_logdirinfo,LogDirInfo>> > map
+
+
+[[_memberdescription]]
+=== MemberDescription
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**assignment** +
+__optional__|< <<_topicpartition,TopicPartition>> > array
+|**clientId** +
+__optional__|string
+|**host** +
+__optional__|string
+|**memberId** +
+__optional__|string
+|===
+
+
+[[_node]]
+=== Node
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**empty** +
+__optional__|boolean
+|**hash** +
+__optional__|integer(int32)
+|**host** +
+__optional__|string
+|**id** +
+__optional__|integer(int32)
+|**idString** +
+__optional__|string
+|**port** +
+__optional__|integer(int32)
+|**rack** +
+__optional__|string
+|===
+
+
+[[_pattern]]
+=== Pattern
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**cursor** +
+__optional__|integer(int32)
+|**flags** +
+__optional__|integer(int32)
+|**pattern** +
+__optional__|string
+|===
+
+
+[[_reassignmodel]]
+=== ReassignModel
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**partitions** +
+__optional__|< <<_topicpartitionreplicaassignment,TopicPartitionReplicaAssignment>> > array
+|**version** +
+__optional__|integer(int32)
+|===
+
+
+[[_reassignstatus]]
+=== ReassignStatus
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**msg** +
+__optional__|string
+|**partitionsReassignStatus** +
+__optional__|< string, integer(int32) > map
+|**removeThrottle** +
+__optional__|boolean
+|**replicasReassignStatus** +
+__optional__|< string, integer(int32) > map
+|===
+
+
+[[_reassignwrapper]]
+=== ReassignWrapper
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**brokers** +
+__optional__|< integer(int32) > array
+|**topics** +
+__optional__|< string > array
+|===
+
+
+[[_record]]
+=== Record
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**key** +
+__optional__|string
+|**keyDecoder** +
+__optional__|string
+|**offset** +
+__optional__|integer(int64)
+|**timestamp** +
+__optional__|integer(int64)
+|**topic** +
+__optional__|string
+|**value** +
+__optional__|string
+|**valueDecoder** +
+__optional__|string
+|===
+
+
+[[_replicainfo]]
+=== ReplicaInfo
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**isFuture** +
+__optional__|boolean
+|**offsetLag** +
+__optional__|integer(int64)
+|**size** +
+__optional__|integer(int64)
+|===
+
+
+[[_replicalogdirinfo]]
+=== ReplicaLogDirInfo
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**currentReplicaLogDir** +
+__optional__|string
+|**currentReplicaOffsetLag** +
+__optional__|integer(int64)
+|**futureReplicaLogDir** +
+__optional__|string
+|**futureReplicaOffsetLag** +
+__optional__|integer(int64)
+|===
+
+
+[[_schemametadata]]
+=== SchemaMetadata
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**id** +
+__optional__|integer(int32)
+|**schema** +
+__optional__|string
+|**version** +
+__optional__|integer(int32)
+|===
+
+
+[[_schemaregistrymetadata]]
+=== SchemaRegistryMetadata
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**id** +
+__optional__|integer(int32)
+|**schema** +
+__optional__|string
+|**subject** +
+__optional__|string
+|**version** +
+__optional__|integer(int32)
+|===
+
+
+[[_topicbrief]]
+=== TopicBrief
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**isrRate** +
+__optional__|number(double)
+|**numPartition** +
+__optional__|integer(int32)
+|**replicationFactor** +
+__optional__|integer(int32)
+|**topic** +
+__optional__|string
+|===
+
+
+[[_topicdetail]]
+=== TopicDetail
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**factor** +
+__optional__|integer(int32)
+|**name** +
+__optional__|string
+|**partitions** +
+__optional__|integer(int32)
+|**prop** +
+__optional__|< string, object > map
+|**replicasAssignments** +
+__optional__|< string, < integer(int32) > array > map
+|===
+
+
+[[_topicmeta]]
+=== TopicMeta
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**internal** +
+__optional__|boolean
+|**partitionCount** +
+__optional__|integer(int32)
+|**replicationFactor** +
+__optional__|integer(int32)
+|**topicName** +
+__optional__|string
+|**topicPartitionInfos** +
+__optional__|< <<_customtopicpartitioninfo,CustomTopicPartitionInfo>> > array
+|===
+
+
+[[_topicpartition]]
+=== TopicPartition
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**hash** +
+__optional__|integer(int32)
+|**partition** +
+__optional__|integer(int32)
+|**topic** +
+__optional__|string
+|===
+
+
+[[_topicpartitioninfo]]
+=== TopicPartitionInfo
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**isr** +
+__optional__|< <<_node,Node>> > array
+|**leader** +
+__optional__|<<_node,Node>>
+|**partition** +
+__optional__|integer(int32)
+|**replicas** +
+__optional__|< <<_node,Node>> > array
+|===
+
+
+[[_topicpartitionreplicaassignment]]
+=== TopicPartitionReplicaAssignment
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**log_dirs** +
+__optional__|< string > array
+|**partition** +
+__optional__|integer(int32)
+|**replicas** +
+__optional__|< integer(int32) > array
+|**topic** +
+__optional__|string
+|===
+
+
+[[_user]]
+=== User
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**password** +
+__optional__|string
+|**role** +
+__optional__|string
+|**username** +
+__optional__|string
+|===
+
+
+[[_zkserverclient]]
+=== ZkServerClient
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**host** +
+__optional__|string
+|**ops** +
+__optional__|integer(int32)
+|**port** +
+__optional__|integer(int32)
+|**queued** +
+__optional__|integer(int32)
+|**received** +
+__optional__|integer(int32)
+|**sent** +
+__optional__|integer(int32)
+|===
+
+
+[[_zkserverenvironment]]
+=== ZkServerEnvironment
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**attributes** +
+__optional__|< string, string > map
+|===
+
+
+[[_zkserverstat]]
+=== ZkServerStat
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**avgLatency** +
+__optional__|integer(int32)
+|**buildDate** +
+__optional__|string
+|**clients** +
+__optional__|< <<_zkserverclient,ZkServerClient>> > array
+|**connections** +
+__optional__|integer(int32)
+|**maxLatency** +
+__optional__|integer(int32)
+|**minLatency** +
+__optional__|integer(int32)
+|**mode** +
+__optional__|enum (Leader, Follower, Observer, Standalone, Down, Unknow)
+|**msg** +
+__optional__|string
+|**nodes** +
+__optional__|integer(int32)
+|**outstanding** +
+__optional__|integer(int32)
+|**received** +
+__optional__|integer(int32)
+|**sent** +
+__optional__|integer(int32)
+|**version** +
+__optional__|string
+|**zxId** +
+__optional__|string
+|===
+
+
+

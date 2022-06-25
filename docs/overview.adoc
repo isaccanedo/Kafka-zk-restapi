@@ -1,0 +1,35 @@
+= Kafka REST API SwaggerUI
+
+
+[[_overview]]
+== Overview
+Kafka REST API SwaggerUI
+
+
+=== Version information
+[%hardbreaks]
+__Version__ : 0.1.0
+
+
+=== Contact information
+[%hardbreaks]
+__Contact__ : gnuhpc
+__Contact Email__ : gnuhpc@gmail.com
+
+
+=== URI scheme
+[%hardbreaks]
+__Host__ : localhost:8080
+__BasePath__ : /
+
+
+=== Tags
+
+* collector-controller : Rest API for Collecting JMX Metric Data
+* kafka-controller : Kafka Controller
+* schema-registry-controller : Schema Registry Controller
+* user-controller : Security User Management Controller.
+* zookeeper-controller : Zookeeper Controller
+
+
+

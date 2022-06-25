@@ -1,0 +1,11 @@
+spring:
+  profiles:
+    active: tina
+
+  main:
+    allow-bean-definition-overriding: true
+
+server:
+  error:
+    whitelabel:
+      enabled: false
