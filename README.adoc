@@ -4,7 +4,7 @@ image:https://travis-ci.org/isaccanedo/Kafka-zk-restapi.svg?branch=master["Build
 
 [[_overview]]
 == Overview
-Kafka/ZK REST API is to provide the production-ready endpoints to perform some administration/metric task for Kafka and Zookeeper.
+A API REST do Kafka/ZK é fornecer os terminais prontos para produção para executar alguma tarefa de administração/métrica para Kafka e Zookeeper.
 
 // tag::base-t[]
 .Following features are provided:
