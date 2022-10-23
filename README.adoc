@@ -29,7 +29,7 @@ A API REST do Kafka/ZK é fornecer os terminais prontos para produção para exe
 image::https://raw.githubusercontent.com/isaccanedo/Kafka-zk-restapi/master/pics/ShowApi.png[API]
 
 
-We have also opensourced a simple but useful UI for these APIs. Please check https://github.com/isaccanedo/Kafka-zk-restapi-UI for more details.
+Também disponibilizamos uma interface de usuário simples, mas útil, para essas APIs. Please check https://github.com/isaccanedo/Kafka-zk-restapi-UI for more details.
 
 === Installation and run
 First of all, Java 8 jre/jdk needed.
