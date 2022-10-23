@@ -39,7 +39,7 @@ https://github.com/isaccanedo/Kafka-zk-restapi/releases
 
 You can get it running by unzip/untaring the distribution package, perform some configurations needed and run bin/start.sh
 
-=== How to build 
+=== Como construir 
 
 You can build this restapi server using maven.
 
