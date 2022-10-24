@@ -19,7 +19,7 @@ A API REST do Kafka/ZK é fornecer os terminais prontos para produção para exe
 * Listar/descrever/excluir o grupo de consumidores;
 * Consumer Group Lag check
 * Redefinição de deslocamento por mais cedo/mais recente/carimbo de data e hora;
-* Contents view of message by different decoder, avro is also supported
+* Visualização do conteúdo da mensagem por decodificador diferente, o avro também é suportado;
 * Schema management on Schema Registry is supported
 * Collect JMX metrics from brokers that expose JMX metrics +
   More details refer to https://github.com/isaccanedo/Kafka-zk-restapi/blob/master/docs/JMXCollector.adoc[JMXCollector API Specification]
