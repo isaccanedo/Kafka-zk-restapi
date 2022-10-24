@@ -16,7 +16,7 @@ A API REST do Kafka/ZK é fornecer os terminais prontos para produção para exe
 * Criar/atualizar/lista de configuração de tópico;
 * Adição e reatribuição de partição de tópico, o movimento de réplicas entre diretórios de log é suportado;
 * Transferência de liderança da partição de tópico de volta para a réplica preferencial;
-* Consumer group list/describe/delete
+* Listar/descrever/excluir o grupo de consumidores;
 * Consumer Group Lag check
 * Offset reset by earliest/latest/timestamp
 * Contents view of message by different decoder, avro is also supported
