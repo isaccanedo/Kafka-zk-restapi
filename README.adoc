@@ -31,7 +31,7 @@ image::https://raw.githubusercontent.com/isaccanedo/Kafka-zk-restapi/master/pics
 
 Também disponibilizamos uma interface de usuário simples, mas útil, para essas APIs. Please check https://github.com/isaccanedo/Kafka-zk-restapi-UI for more details.
 
-=== Installation and run
+=== Instalação e execução
 First of all, Java 8 jre/jdk needed.
 
 You can download the release package at
