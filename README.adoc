@@ -9,8 +9,8 @@ A API REST do Kafka/ZK é fornecer os terminais prontos para produção para exe
 // tag::base-t[]
 .Os seguintes recursos são fornecidos:
 * informações de cluster/nós/controlador descrevem;
-* Lista de corretores
-* Broker config get/update, dynamic config get/update/delete
+* Lista de corretores;
+* Obter/atualizar a configuração do agente, obter/atualizar/excluir a configuração dinâmica;
 * Log dirs describe, filtered by brokers/topic/partition/logdirs
 * Topic create/delete/describe/list
 * Topic config create/update/list
