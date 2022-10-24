@@ -14,7 +14,7 @@ A API REST do Kafka/ZK é fornecer os terminais prontos para produção para exe
 * Os diretórios de log descrevem, filtrados por brokers/topic/partition/logdirs;
 * Criar/excluir/descrever/listar tópico;
 * Criar/atualizar/lista de configuração de tópico;
-* Topic partition add and reassign, replicas movement between log directories is supported
+* Adição e reatribuição de partição de tópico, o movimento de réplicas entre diretórios de log é suportado;
 * Topic Partition leadership transfer back to preferred replica
 * Consumer group list/describe/delete
 * Consumer Group Lag check
