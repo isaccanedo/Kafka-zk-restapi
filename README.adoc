@@ -41,7 +41,7 @@ Você pode executá-lo descompactando/descompactando o pacote de distribuição,
 
 === Como construir 
 
-You can build this restapi server using maven.
+Você pode construir este servidor restapi usando maven.
 
 . `$ git clone \https://github.com/isaccanedo/Kafka-zk-restapi.git`
 . `$ cd Kafka-zk-restapi/`
