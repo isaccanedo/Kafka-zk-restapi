@@ -71,7 +71,7 @@ Mais detalhes consulte https://github.com/isaccanedo/Kafka-zk-restapi/blob/maste
 * server.security.check/server.security.checkInitDelay/server.security.checkSecurityInterval: Parâmetros relacionados à segurança;
 Veja abaixo: <<_security,'How to config security'>>
 
-=== How to run
+=== Como executar
 ==== A. Pulling from Docker hub
 Step 1 : Prepare a directory that contains spring application property files as a volume to mount into the container.
 Custom your own parameters such as Kafka/zk addresses, schema registry url, security params, etc.
