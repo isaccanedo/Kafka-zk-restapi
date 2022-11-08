@@ -60,10 +60,10 @@ Você pode executá-lo descompactando/descompactando o pacote de distribuição 
 
 Altere as seguintes configurações de application-ACTIVEENV.yml:
 
-* kafka.brokers: endereços do corretor kafka.
-* kafka.schemaregistry: Endereço de registro de esquema. Se não existir, basta fornecer um URL aleatório.
-* kafka.healthcheck.topic: Nome do tópico para verificação de integridade.
-* kafka.sasl.enable/kafka.sasl.protocol/kafka.sasl.mechanism: Set kafka.sasl.enable to true if connect to a kafka cluster that adds SASL authentication.
+* kafka.brokers: endereços do corretor kafka;
+* kafka.schemaregistry: Endereço de registro de esquema. Se não existir, basta fornecer um URL aleatório;
+* kafka.healthcheck.topic: Nome do tópico para verificação de integridade;
+* kafka.sasl.enable/kafka.sasl.protocol/kafka.sasl.mechanism:Defina kafka.sasl.enable como true se conectar a um cluster kafka que adiciona autenticação SASL;
 Remember to assign JAAS config file location to JVM property java.security.auth.login.config before starting this application.
 * zookeeper.uris: zookeeper addresses.
 * jmx.kafka.jmxurl/jmx.zookeeper.jmxurl: kafka/zookeeper jmx urls. If you want to use JMX Query Filter function, you can add your own custom filter files to JMXFilterTemplate directory in project root folder.
