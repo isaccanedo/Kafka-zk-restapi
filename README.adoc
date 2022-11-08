@@ -60,7 +60,7 @@ Você pode executá-lo descompactando/descompactando o pacote de distribuição 
 
 Altere as seguintes configurações de application-ACTIVEENV.yml:
 
-* kafka.brokers: kafka broker addresses.
+* kafka.brokers: endereços do corretor kafka.
 * kafka.schemaregistry: Schema Registry address. If not exist, just provide a random URL.
 * kafka.healthcheck.topic: Topic name for health check.
 * kafka.sasl.enable/kafka.sasl.protocol/kafka.sasl.mechanism: Set kafka.sasl.enable to true if connect to a kafka cluster that adds SASL authentication.
