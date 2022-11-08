@@ -56,7 +56,7 @@ para construir sua própria imagem, primeiro modifique os arquivos de propriedad
 Os detalhes referem-se a <<_How to config,'How to config'>>
 
 === Como configurar
-You can get it running by unzip/untaring the distribution package and change the corresponding configuration in config directory:
+Você pode executá-lo descompactando/descompactando o pacote de distribuição e alterando a configuração correspondente no diretório de configuração:
 
 Change the following settings of application-ACTIVEENV.yml:
 
