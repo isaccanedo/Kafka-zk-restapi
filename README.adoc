@@ -58,7 +58,7 @@ Os detalhes referem-se a <<_How to config,'How to config'>>
 === Como configurar
 Você pode executá-lo descompactando/descompactando o pacote de distribuição e alterando a configuração correspondente no diretório de configuração:
 
-Change the following settings of application-ACTIVEENV.yml:
+Altere as seguintes configurações de application-ACTIVEENV.yml:
 
 * kafka.brokers: kafka broker addresses.
 * kafka.schemaregistry: Schema Registry address. If not exist, just provide a random URL.
