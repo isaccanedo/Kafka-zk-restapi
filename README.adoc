@@ -65,8 +65,8 @@ Altere as seguintes configurações de application-ACTIVEENV.yml:
 * kafka.healthcheck.topic: Nome do tópico para verificação de integridade;
 * kafka.sasl.enable/kafka.sasl.protocol/kafka.sasl.mechanism: Defina kafka.sasl.enable como true se conectar a um cluster kafka que adiciona autenticação SASL;
 Lembre-se de atribuir o local do arquivo de configuração JAAS à propriedade JVM java.security.auth.login.config antes de iniciar este aplicativo.
-* zookeeper.uris: zookeeper addresses.
-* jmx.kafka.jmxurl/jmx.zookeeper.jmxurl: kafka/zookeeper jmx urls. If you want to use JMX Query Filter function, you can add your own custom filter files to JMXFilterTemplate directory in project root folder.
+* zookeeper.uris: endereços do zookeeper;
+* jmx.kafka.jmxurl/jmx.zookeeper.jmxurl: kafka/zookeeper jmx urls. Se você quiser usar a função Filtro de Consulta JMX, poderá adicionar seus próprios arquivos de filtro personalizados ao diretório Modelo de Filtro JMX na pasta raiz do projeto;
 More details refer to https://github.com/isaccanedo/Kafka-zk-restapi/blob/master/docs/JMXCollector.adoc[JMXCollector API Specification]
 * server.security.check/server.security.checkInitDelay/server.security.checkSecurityInterval: Security related parameters.
 See below: <<_security,'How to config security'>>
