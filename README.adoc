@@ -61,7 +61,7 @@ Você pode executá-lo descompactando/descompactando o pacote de distribuição 
 Altere as seguintes configurações de application-ACTIVEENV.yml:
 
 * kafka.brokers: endereços do corretor kafka.
-* kafka.schemaregistry: Schema Registry address. If not exist, just provide a random URL.
+* kafka.schemaregistry: Endereço de registro de esquema. Se não existir, basta fornecer um URL aleatório.
 * kafka.healthcheck.topic: Topic name for health check.
 * kafka.sasl.enable/kafka.sasl.protocol/kafka.sasl.mechanism: Set kafka.sasl.enable to true if connect to a kafka cluster that adds SASL authentication.
 Remember to assign JAAS config file location to JVM property java.security.auth.login.config before starting this application.
