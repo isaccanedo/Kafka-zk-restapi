@@ -69,7 +69,7 @@ Lembre-se de atribuir o local do arquivo de configuração JAAS à propriedade J
 * jmx.kafka.jmxurl/jmx.zookeeper.jmxurl: kafka/zookeeper jmx urls. Se você quiser usar a função Filtro de Consulta JMX, poderá adicionar seus próprios arquivos de filtro personalizados ao diretório Modelo de Filtro JMX na pasta raiz do projeto;
 Mais detalhes consulte https://github.com/isaccanedo/Kafka-zk-restapi/blob/master/docs/JMXCollector.adoc[JMXCollector API Specification];
 * server.security.check/server.security.checkInitDelay/server.security.checkSecurityInterval: Parâmetros relacionados à segurança;
-See below: <<_security,'How to config security'>>
+Veja abaixo: <<_security,'How to config security'>>
 
 === How to run
 ==== A. Pulling from Docker hub
