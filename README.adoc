@@ -55,7 +55,7 @@ A docker image named kafka-rest-springboot:latest is created after building. If 
 to build your own image, modify application property files in src/main/resources first.
 Details refer to <<_How to config,'How to config'>>
 
-=== How to config
+=== Como configurar
 You can get it running by unzip/untaring the distribution package and change the corresponding configuration in config directory:
 
 Change the following settings of application-ACTIVEENV.yml:
