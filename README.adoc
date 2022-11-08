@@ -51,8 +51,8 @@ Após a construção do maven, você encontrará zip/tar no diretório: Kafka-zk
 
 **Novo**:
 Agora damos suporte à criação de imagem do docker usando spotify docker-maven-plugin.
-Uma imagem docker chamada kafka-rest-springboot:latest é criada após a compilação. If you want
-to build your own image, modify application property files in src/main/resources first.
+Uma imagem docker chamada kafka-rest-springboot:latest é criada após a compilação. Se você quiser
+para construir sua própria imagem, primeiro modifique os arquivos de propriedades do aplicativo em src/main/resources.
 Details refer to <<_How to config,'How to config'>>
 
 === Como configurar
