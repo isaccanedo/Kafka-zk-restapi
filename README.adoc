@@ -34,7 +34,7 @@ Também disponibilizamos uma interface de usuário simples, mas útil, para essa
 === Instalação e execução
 Primeiro de tudo, Java 8 jre/jdk necessário.
 
-You can download the release package at
+Você pode baixar o pacote de lançamento em:
 https://github.com/isaccanedo/Kafka-zk-restapi/releases
 
 Você pode executá-lo descompactando/descompactando o pacote de distribuição, executando algumas configurações necessárias e executando bin/start.sh
