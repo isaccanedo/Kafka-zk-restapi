@@ -76,7 +76,7 @@ Veja abaixo: <<_security,'How to config security'>>
 Etapa 1 : Prepare um diretório que contenha arquivos de propriedades do aplicativo Spring como um volume para montar no contêiner.
 Personalize seus próprios parâmetros, como endereços Kafka/zk, url de registro de esquema, parâmetros de segurança, etc.
 
-Step 2 : Run the image. /XX/XX/config is the directory that noticed in Step 1.
+Etapa 2: execute a imagem. /XX/XX/config é o diretório observado na Etapa 1.
 
 `$ docker run -p 8121:8121 -v /XX/XX/config:/app/config --env JAVA_OPTS='-Xms1g -Xmx1g' tinawenqiao/kafka-rest-springboot`
 
