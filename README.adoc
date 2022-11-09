@@ -80,7 +80,7 @@ Etapa 2: execute a imagem. /XX/XX/config é o diretório observado na Etapa 1.
 
 `$ docker run -p 8121:8121 -v /XX/XX/config:/app/config --env JAVA_OPTS='-Xms1g -Xmx1g' tinawenqiao/kafka-rest-springboot`
 
-Details refer to https://hub.docker.com/r/tinawenqiao/kafka-rest-springboot
+Os detalhes referem-se a https://hub.docker.com/r/tinawenqiao/kafka-rest-springboot
 
 Note: Make sure advertised.listeners(kafka server property) is set correctly if you access kafka from docker image.
 
