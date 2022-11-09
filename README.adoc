@@ -98,8 +98,7 @@ Veja <<Como construir,'Como construir'>>
 . `$ cd kafka-zk-api-1.1.x-release-dist`
 . `$ bin/start.sh`
 
- Note: If connect to a kafka cluster that adds SASL authentication, add -Djava.security.auth.login.config=jaas.conf to JVM property.
-
+ Nota: Se conectar a um cluster kafka que inclui autenticação SASL, inclua -Djava.security.auth.login.config=jaas.conf na propriedade JVM.
 [[_security]]
 === Security
 Public REST services without access control make the sensitive data under risk.Then we provide a simple authentication mechanism using Spring Security.
