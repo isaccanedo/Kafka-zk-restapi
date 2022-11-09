@@ -115,7 +115,7 @@ Passo 1: Modifique o arquivo de configuração do aplicativo e defina server.sec
 * server.security.checkInitDelay: O número de segundos de atraso de inicialização para o encadeamento de tempo verificar o arquivo de segurança.
 * server.security.checkSecurityInterval: O número de segundos do intervalo de verificação para o encadeamento de tempo para verificar o arquivo de segurança.
 
-Step 2: Make sure security/security.yml exist in application root folder.
+Etapa 2: verifique se security/security.yml existe na pasta raiz do aplicativo.
 
 Step 3: Use user controller API to add user to security file security/security.yml. +
 **Notice**:
