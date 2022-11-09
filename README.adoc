@@ -106,7 +106,7 @@ Para deixar o projeto mais leve, utilizamos o arquivo yml para armazenar as info
 
 Siga as etapas para ativar o recurso de segurança:
 
-Step 1：Modify the application config file and set server.security.check to true. +
+Passo 1: Modifique o arquivo de configuração do aplicativo e defina server.security.check para true. +
 
 * server.security.check:
   ** True: Add security for the API. Clients can access the API with valid username and password stored in security.yml, or the Swagger UI(http://127.0.0.1:8121/api) is only
