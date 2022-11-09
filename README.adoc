@@ -82,7 +82,7 @@ Etapa 2: execute a imagem. /XX/XX/config é o diretório observado na Etapa 1.
 
 Os detalhes referem-se a https://hub.docker.com/r/tinawenqiao/kafka-rest-springboot
 
-Note: Make sure advertised.listeners(kafka server property) is set correctly if you access kafka from docker image.
+Nota: Certifique-se de que o protected.listeners(kafka server property) esteja configurado corretamente se você acessar o kafka a partir da imagem do docker.
 
 ==== B. Run your own docker image
 
