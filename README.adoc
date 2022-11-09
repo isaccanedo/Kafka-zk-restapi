@@ -109,8 +109,8 @@ Siga as etapas para ativar o recurso de segurança:
 Passo 1: Modifique o arquivo de configuração do aplicativo e defina server.security.check para true. +
 
 * server.security.check:
-  ** True: Add security for the API. Clients can access the API with valid username and password stored in security.yml, or the Swagger UI(http://127.0.0.1:8121/api) is only
-                        allowed to access.
+  ** True: Adicione segurança para a API. Os clientes podem acessar a API com nome de usuário e senha válidos armazenados em security.yml, ou a IU do Swagger (http://127.0.0.1:8121/api) só tem permissão de acesso.
+  
   ** False: All the endpoints can be accessed without authentication.
 * server.security.checkInitDelay: The number of seconds of init delay for the timing thread to check the security file.
 * server.security.checkSecurityInterval: The number of seconds of check interval for the timing thread to check the security file.
