@@ -100,7 +100,7 @@ Veja <<Como construir,'Como construir'>>
 
  Nota: Se conectar a um cluster kafka que inclui autenticação SASL, inclua -Djava.security.auth.login.config=jaas.conf na propriedade JVM.
 [[_security]]
-=== Security
+=== Segurança
 Public REST services without access control make the sensitive data under risk.Then we provide a simple authentication mechanism using Spring Security.
 In order to make the project lighter, we use yml file to store user information, not using database.
 
