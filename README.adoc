@@ -91,7 +91,7 @@ Nota: Certifique-se de que o protected.listeners(kafka server property) esteja c
 Observação: certifique-se de que o protected.listeners(propriedade do servidor kafka) esteja configurado corretamente se você acessar o kafka a partir da imagem do docker.
 Veja <<Como construir,'Como construir'>>
 
-==== C. Use the built tar/zip package
+==== C. Use o pacote tar/zip construído
 . `$ tar -xvf kafka-zk-api-1.1.x-release-dist.tar`
   or
   `$ unzip kafka-zk-api-1.1.x-release-dist.zip`
