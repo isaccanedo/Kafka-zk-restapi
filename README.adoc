@@ -84,7 +84,7 @@ Os detalhes referem-se a https://hub.docker.com/r/tinawenqiao/kafka-rest-springb
 
 Nota: Certifique-se de que o protected.listeners(kafka server property) esteja configurado corretamente se você acessar o kafka a partir da imagem do docker.
 
-==== B. Run your own docker image
+==== B. Execute sua própria imagem docker
 
 `$ docker run -p 8121:8121 --env JAVA_OPTS='-Xms1g -Xmx1g' tinawenqiao/kafka-rest-springboot:latest`
 
