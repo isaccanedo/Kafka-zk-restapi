@@ -74,7 +74,7 @@ Veja abaixo: <<_security,'How to config security'>>
 === Como executar
 ==== A. Puxando do hub do Docker
 Step 1 : Prepare um diretório que contenha arquivos de propriedades do aplicativo Spring como um volume para montar no contêiner.
-Custom your own parameters such as Kafka/zk addresses, schema registry url, security params, etc.
+Personalize seus próprios parâmetros, como endereços Kafka/zk, url de registro de esquema, parâmetros de segurança, etc.
 
 Step 2 : Run the image. /XX/XX/config is the directory that noticed in Step 1.
 
