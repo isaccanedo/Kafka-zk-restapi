@@ -150,7 +150,7 @@ Você pode acessar Swagger-UI acessando http://127.0.0.1:8121/api
 === https://github.com/isaccanedo/Kafka-zk-restapi/blob/master/docs/definitions.adoc[Data Model Definitions for 1.1.1]
 
 
-=== Version information
+=== Versão informação
 [%hardbreaks]
 __Version__ : 1.1.1
 
