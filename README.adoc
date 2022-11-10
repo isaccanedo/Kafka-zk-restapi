@@ -124,7 +124,7 @@ Step 3: Use user controller API to add user to security file security/security.y
 * Não há necessidade de reiniciar o servidor após adicionar um novo usuário ou atualizar as informações do usuário. O encadeamento de tempo introduzido na Etapa 1 atualizará a lista de usuários de acordo com suas configurações.
 
 === Informações sobre a versão do Kafka de suporte
-Atualmente, esta API de descanso (ramificação principal) suporta corretores Kafka 1.1.1. The master branch is the most active branch.
+Atualmente, esta API de descanso (ramificação principal) suporta corretores Kafka 1.1.1. O branch master é o branch mais ativo.
 
 *For other version of kafka rather than 1.1.1, please checkout the coresponding branch by calling the command:*
 
