@@ -135,7 +135,7 @@ git clone -b BRANCHNAME https://github.com/isaccanedo/Kafka-zk-restapi.git
 __Host__ : localhost:8121
 __BasePath__ : /
 
-You can access Swagger-UI by accessing http://127.0.0.1:8121/api
+Você pode acessar Swagger-UI acessando http://127.0.0.1:8121/api
 
 
 === https://github.com/isaccanedo/Kafka-zk-restapi/blob/master/docs/paths.adoc[API LIST for 1.1.1]
