@@ -126,7 +126,7 @@ Step 3: Use user controller API to add user to security file security/security.y
 === Informações sobre a versão do Kafka de suporte
 Atualmente, esta API de descanso (ramificação principal) suporta corretores Kafka 1.1.1. O branch master é o branch mais ativo.
 
-*For other version of kafka rather than 1.1.1, please checkout the coresponding branch by calling the command:*
+*Para outra versão do kafka em vez da 1.1.1, verifique a ramificação correspondente chamando o comando:*
 
 git clone -b BRANCHNAME https://github.com/isaccanedo/Kafka-zk-restapi.git
 
