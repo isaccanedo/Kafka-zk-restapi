@@ -121,7 +121,7 @@ Step 3: Use user controller API to add user to security file security/security.y
 **Notice**:
 
 * O primeiro usuário deve ser adicionado manualmente. A senha precisa ser codificada usando bcrypt antes de salvar no arquivo yml. Por conveniência, fornecemos CommonUtils para codificar a senha.
-* Não há necessidade de reiniciar o servidor após adicionar um novo usuário ou atualizar as informações do usuário. Timing thread introduced in Step 1 will refresh the user list according to your settings.
+* Não há necessidade de reiniciar o servidor após adicionar um novo usuário ou atualizar as informações do usuário. O encadeamento de tempo introduzido na Etapa 1 atualizará a lista de usuários de acordo com suas configurações.
 
 === Informações sobre a versão do Kafka de suporte
 Currently, this rest api (master branch) supports Kafka 1.1.1 brokers. The master branch is the most active branch.
