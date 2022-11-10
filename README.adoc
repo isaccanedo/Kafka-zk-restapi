@@ -155,7 +155,7 @@ Você pode acessar Swagger-UI acessando http://127.0.0.1:8121/api
 __Version__ : 1.1.1
 
 
-=== Contact information
+=== Informações de Contato
 [%hardbreaks]
 __Contact__ : isaccanedo
 __Github__ : https://github.com/isaccanedo
